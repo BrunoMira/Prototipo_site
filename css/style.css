@@ -1,0 +1,21 @@
+#logo{
+    height: 50px;
+    width: 80px;
+}
+
+#separador{
+    border: 1px solid #cccccc;
+}
+
+.glyphicon{
+   font-size: 25px;
+}
+
+.navbar{
+    margin: 5px
+}
+
+.header{
+    align-items: center;
+}
+

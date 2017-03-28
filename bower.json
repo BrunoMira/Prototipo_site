@@ -1,0 +1,21 @@
+{
+  "name": "Prototipo_site",
+  "authors": [
+    "BrunoMira <brunobru33@hotmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.3",
+    "bootstrap": "3.3.7"
+  }
+}
