@@ -1,0 +1,93 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header text-center">
+                <h1>Meu Carrinho</h1>
+
+                <div class="col-xs-12 text-right">
+                    <p>Quantidade de Itens:
+                        <span id="quantidadeCarrinho" class="text-danger">4</span>
+                    </p>
+                </div>
+                <div class="col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table ">
+                            <tbody>
+                                <tr>
+                                    <td id="celula-carrinho">
+                                        <img src="../imagens/abacate-thumb.jpg" alt="Delicioso">
+                                    </td>
+                                    <td id="celula-carrinho">
+                                        <h3>Nome do produto</h3>
+                                    </td>
+                                    <td id="celula-carrinho">
+                                        <span class="text-success">1 X 12,90 = R$ 12,90</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="celula-carrinho">
+                                        <img src="../imagens/abacate-thumb.jpg" alt="Delicioso">
+                                    </td>
+                                    <td id="celula-carrinho">
+                                        <h3>Nome do produto</h3>
+                                    </td>
+                                    <td id="celula-carrinho">
+                                        <span class="text-success">1 X 12,90 = R$ 12,90</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="celula-carrinho">
+                                        <img src="../imagens/abacate-thumb.jpg" alt="Delicioso">
+                                    </td>
+                                    <td id="celula-carrinho">
+                                        <h3>Nome do produto</h3>
+                                    </td>
+                                    <td id="celula-carrinho">
+                                        <span class="text-success">1 X 12,90 = R$ 12,90</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td id="celula-carrinho">
+                                        <img src="../imagens/abacate-thumb.jpg" alt="Delicioso">
+                                    </td>
+                                    <td id="celula-carrinho">
+                                        <h3>Nome do produto</h3>
+                                    </td>
+                                    <td id="celula-carrinho">
+                                        <span class="text-success"> 1 X 12,90 = R$ 12,90</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td>
+
+                                        <span id="quantidadeCarrinho" class="text-success">Total :R$ 999,00</span>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 text-right">
+                    <a href="http://localhost:8080/#!/efetuar-compra">
+                        <button type="button" class="btn btn-default btn-block btn-success">
+                        Finalizar compras
+                        </button>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 text-right">
+                    <a href="http://localhost:8080/#!/home">
+                        <button type="button" class="btn btn-default btn-block btn-warning">Ainda não Terminei  minhas compras</button>
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-include="'view/detalhesExtras.html'"></div>

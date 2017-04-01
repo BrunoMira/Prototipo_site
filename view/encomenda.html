@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header text-center">
+                <h1>Encomendas <br/><small>Diga, como você quer seu produto?</small>
+                </h1>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="form-group">
+                    <label for="encomenda-tipo">Escolha o tipo de produto</label>
+                    <select id="encomenda-tipo" class="form-control">
+                            <option>Tolha de Roste</option>
+                            <option>Tolha de banho</option>
+                            </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <p>As encomendas Podem ser Feitas diretamente com a artesã. <br/> acesse <a href="#">Fale Conosco</a> e faça
+                    seu pedido
+                </p>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group">
+                    <label for="encomenda-cor">Escolha usa Cor:</label>
+                    <input type="color" id="encomenda-cor" class="form-control" />
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <label for="encomenda-textarea">Descreva seu Produto</label>
+                <textarea id="encomenda-textarea" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+
+            <div class="col-xs-8 col-xs-offset-2">
+                <button class="btn btn-primary btn-block">Enviar Encomenda</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-include="'view/detalhesExtras.html'"></div>

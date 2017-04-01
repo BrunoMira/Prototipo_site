@@ -1,0 +1,136 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header text-center">
+                <h1>Efetuar Compras <br/>
+                    <small>José da Silva</small>
+                </h1>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+
+                        <tr>
+                            <td id="celula-carrinho">
+                                <img src="../imagens/abacate-thumb.jpg" alt="Delicioso">
+                            </td>
+                            <td id="celula-carrinho">
+                                <h3>Nome do produto</h3>
+                            </td>
+                            <td id="celula-carrinho">
+                                <p class="text-success center-block">1 X 12,90 = R$ 12,90</p>
+                            </td>
+                            <td id="celula-carrinho">
+                                <a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td id="celula-carrinho">
+                                <img src="../imagens/abacate-thumb.jpg" alt="Delicioso">
+                            </td>
+                            <td id="celula-carrinho">
+                                <h3>Nome do produto</h3>
+                            </td>
+                            <td id="celula-carrinho">
+                                <p class="text-success">1 X 12,90 = R$ 12,90</p>
+                            </td>
+                            <td id="celula-carrinho">
+                                <a href="#">
+                                    <p class="glyphicon glyphicon-remove"></p>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td id="celula-carrinho">
+                                <img src="../imagens/abacate-thumb.jpg" alt="Delicioso">
+                            </td>
+                            <td id="celula-carrinho">
+                                <h3>Nome do produto</h3>
+                            </td>
+                            <td id="celula-carrinho">
+                                <p class="text-success">1 X 12,90 = R$ 12,90</p>
+                            </td>
+                            <td id="celula-carrinho">
+                                <a href="#">
+                                    <p class="glyphicon glyphicon-remove"></p>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <label for="compra-cep">Valor do Frete:</label>
+                <div class="input-group">
+                    <input id="compra-cep" type="text" class="form-control" placeholder="digite seu CEP exemplo: 18745-865" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" ng-click="pesquisarFrete(mostrarTabela)" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6" ng-hide="mostrarTabela">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Preço</th>
+                            <th>Tempo</th>
+                            <th>Escolha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Normal</td>
+                            <td>R$ 5,00</td>
+                            <td>15 dias</td>
+                            <td>
+                                <input type="radio" name="escolha-frete" id="compra-escolhaFrete" checked />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Expresso</td>
+                            <td>R$ 15,00</td>
+                            <td>5 dias</td>
+                            <td>
+                                <input type="radio" name="escolha-frete" id="compra-escolhaFrete" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Agendado</td>
+                            <td>R$ 25,00</td>
+                            <td>A Agendar</td>
+                            <td>
+                                <input type="radio" name="escolha-frete" id="compra-escolhaFrete" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 text-center">
+                <p>Sub-Total: <span>R$ 130,00</span> </p>
+                <p>Frete: <span>R$ 15,00</span> </p>
+                <p class="text-success">Total: <span>R$ 145,00</span> </p>
+                <button class="btn btn-primary btn-block btn-lg">
+                    Prosseguir com a compra?
+                </button>
+                <div class="col-xs-12 col-sm-6">
+                    <button class="btn btn-warning btn-block">
+                        Voltar as Compras
+                    </button>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <button class="btn btn-danger btn-block">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ng-include="'view/detalhesExtras.html'">
+    <div>

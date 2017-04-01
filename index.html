@@ -1,187 +1,246 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Prototipo</title>
-        <link rel="stylesheet" href="css/style.css"/>
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-        <script type="text/javascript" href="js/main.js"></script>
-        <script type="text/javascript" href="bower_components/angular/angular.js"></script>
-    </head>
-    <body>
-        <div class="col-xs-12">
-            <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                    <div class="navbar-header">
+<html ng-app="Prototipo">
 
-                        <button type="button" 
-                        class="navbar-toggle collapsed text-center" data-toggle="collapse" 
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prototipo</title>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/config/configRoute.js"></script>
+    <script type="text/javascript" src="js/Controllers/homeController.js"></script>
+    <script type="text/javascript" src="js/Controllers/produtosController.js"></script>
+    <script type="text/javascript" src="js/Controllers/loginController.js"></script>
+    <script type="text/javascript" src="js/Controllers/carrinhoController.js"></script>
+    <script type="text/javascript" src="js/Controllers/encomendaController.js"></script>
+    <script type="text/javascript" src="js/Controllers/efetuarCompraController.js"></script>
+    <script type="text/javascript" src="js/Controllers/detalhesProdutoController.js"></script>
+    <script type="text/javascript" src="js/Controllers/cadastroClienteController.js"></script>
+    <script type="text/javascript" src="js/Controllers/quemSomosController.js"></script>
+    <script type="text/javascript" src="js/Controllers/faleConoscoController.js"></script>
+    <script type="text/javascript" src="js/Directives/homeDirective.js"></script>
+
+</head>
+
+<body>
+
+
+    <!--============NavBar=================================-->
+
+    <div class="col-xs-12">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+
+                <div class="col-sm-2 col-xs-12">
+
+                    <button type="button" class="navbar-toggle collapsed text-center" data-toggle="collapse" data-target="#header-navbar" aria-expanded="false">
 
                             <span class="sr-only">Toggle Navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                    </div>
-                        <div class="col-sm-2">
-                        <a href="index.html"><img id="logo" src="imagens/logo.png" alt="Logo"/></a>
-                        </div>
-                    <div class="collapse navbar-collapse " 
-                        id="bs-example-navbar-collapse-1">
-                        <div class="col-sm-5 text-left header">
-                       <form class="form-group">
-                            <div class="form-group">
-                                <input type="text" name="header-search" class="form-control" placeholder="Search" />
-                            </div>
-                       </form>
-                       </div>
-                       <div class="col-sm-4 text-center">
-                            <div class="col-sm-1">
 
-                            <a href="#"><span id="icone-navbar text-left" class="glyphicon glyphicon-user"></span></a>
+                    <a href="http://localhost:8080/#!/home"><img id="logo" src="imagens/logo.png" alt="Logo" /></a>
+                </div>
+                <div class="collapse navbar-collapse " id="header-navbar">
+                    <div class="col-sm-5 col-xs-12 text-left header">
+                        <form class="form-group">
+                            <div class="input-group">
+                                <input type="text" name="header-search" class="form-control" placeholder="O que você está Procurando?" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default">
+                                        <span class="icone-buscar glyphicon glyphicon-search "></span>
+                                </button>
+                                </span>
                             </div>
-                            <div class="col-sm-8">
-                             <p class="text-rigth">Bem-Vindo <br/><a href="#" id="header-login">Cadastre-se</a> </p>
-                            </div>
-                       </div>   
-                       <div class="col-sm-1">
-                        <a href="#"><span id="icone-navbar" class="glyphicon glyphicon-shopping-cart"></span></a>
-                         </div>
+                        </form>
                     </div>
-                </div>
-            </nav>
-        </div>
-      
-        <div class="col-xs-10 col-xs-offset-1">
-            <div class="btn-group btn-group-justified" role="group" aria-label="...">
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default">Produtos</button>
-                </div>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default">Encomendas</button>
-                </div>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default">Quem Somos</button>
-                </div>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default">Fale Conosco</button>
-                </div>
-                <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-default">Ajuda</button>
+                    <div class="col-sm-4 col-xs-12 text-center">
+                        <div class="col-sm-1 col-xs-12">
+
+                            <a href="http://localhost:8080/#!/cadastrar-cliente"><span id="icone-navbar text-left" class="glyphicon glyphicon-user"></span></a>
+                        </div>
+                        <div class="col-sm-8 col-xs-12">
+                            <p class="text-rigth">Bem-Vindo <br/><a href="http://localhost:8080/#!/cadastrar-cliente" id="header-login">Cadastre-se</a>                                </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 col-xs-12 text-center">
+                        <a href="http://localhost:8080/#!/carrinho">
+                            <span id="icone-navbar" class="glyphicon glyphicon-shopping-cart">
+                            </span></a>
+                    </div>
                 </div>
             </div>
-         </div>
-         <div class="row">
-            <div class="col-sm-12">
-                <div id="teste-carousel" class="carousel slide" data-ride="carousel">
-                    <!-- Indicadores -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#teste-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#teste-carousel" data-slide-to="1" ></li>
-                        <li data-target="#teste-carousel" data-slide-to="2" ></li>
-                    </ol>
-                    <!-- Wrapper sei la oq -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="imagens/banner1.png" alt="teste1"/>
-                            <div class="carousel-caption">
-                                <h3>Titulo 1</h3>
-                                <p>subtitulo 1</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="imagens/banner2.png" alt="teste2"/>
-                            <div class="carousel-caption">
-                               <h3>Titulo 2</h3>
-                                <p>subtitulo 2</p>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img src="imagens/banner3.png" alt="teste3" />
-                            <div class="carousel-caption">
-                                <h3>Titulo 3</h3>
-                                <p>subtitulo 3</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- controls -->
-                    <a href="#teste-carousel" role="button" data-slide="prev" class="left carousel-control">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a href="#teste-carousel" role="button" data-slide="next" class="right carousel-control">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
+        </nav>
+    </div>
+
+    <!--============NavBar=================================-->
+
+    <!--============Menu de Botões=================================-->
+
+    <div class="col-xs-10 col-xs-offset-1">
+
+
+        <button type="button" class="btn btn-primary btn-block collapsed text-center" data-toggle="collapse" data-target="#group-buttons"
+            aria-expanded="false" aria-controls="group-buttons">
+            Menu
+        </button>
+
+        <div class="collapse" id="group-buttons">
+            <div class="col-xs-12 col-md-offset-1">
+
+                <div class="col-xs-12 col-sm-6 col-md-2">
+
+                    <a href="http://localhost:8080/#!/produtos/toalha-de-banho">
+                        <button type="button" class="btn btn-default btn-block">
+                       Produtos
+                    </button>
                     </a>
                 </div>
+                <div class="col-xs-12 col-sm-6 col-md-2">
+                    <a href="http://localhost:8080/#!/encomenda">
+                        <button type="button" class="btn btn-default btn-block">
+                    Encomendas
+                    </button>
+                    </a>
 
-            </div> <!-- col-sm-12 -->
-        </div><!-- row -->
-        <!-- Lista de opções  -->
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-2">
+                    <a href="http://localhost:8080/#!/quem-somos">
+                        <button type="button" class="btn btn-default btn-block">
+                         Quem Somos
+                         </button>
+                    </a>
 
-<hr id="separador"/>
-        <div class="col-sm-12 ">
-            <div class="col-sm-3">
-                <div class="list-group">
-                    <p class="list-group-item active">
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-2">
+                    <a href="http://localhost:8080/#!/fale-conosco">
+                        <button type="button" class="btn btn-default btn-block">Fale Conosco</button>
+                    </a>
+
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-2">
+                    <a href="#">
+                        <button type="button" class="btn btn-default btn-block">Ajuda</button>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--===========Menu de Botões=================================-->
+
+
+
+    <!-- ============Conteudo================================= -->
+
+    <div ng-view>
+
+    </div>
+
+    <!-- ============Conteúdo================================= -->
+
+
+
+    <!-- ============Lista de Serviços================================= 
+        Essa lista está com o Colapse certinho, mas preciso remover a classe in
+        quando a tela diminuir, pois é essa classe que deixa a lista aberta
+        vou ter que remover pelo script
+    -->
+
+
+    <!-- <hr id="separador"/> -->
+    <div class="col-sm-12 col-xs-12 ">
+        <div class="col-sm-3">
+            <div class="list-group">
+                <button type="button" data-toggle="collapse" data-target="#list-group-1" aria-expanded="false" aria-controls="#list-group-1"
+                    class="list-group-item active">
                     Produtos
-                </p>
+                </button>
+                <div class="list-group-collapse collapse in" id="list-group-1">
                     <a href="#" class="list-group-item">Toalhas de Rosto</a>
                     <a href="#" class="list-group-item">Fraldas</a>
                     <a href="#" class="list-group-item">Porta ac consectetur ac</a>
                     <a href="#" class="list-group-item">Vestibulum at eros</a>
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="list-group">
-                    <p class="list-group-item active">
+        </div>
+        <div class="col-sm-3">
+            <div class="list-group">
+                <button data-toggle="collapse" data-target="#list-group-2" aria-expanded="true" aria-controls="#list-group-2" class="list-group-item active">
                     Serviços
-                </p>
+                </button>
+                <div class="list-group-collapse collapse in" id="list-group-2">
                     <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
                     <a href="#" class="list-group-item">Morbi leo risus</a>
                     <a href="#" class="list-group-item">Porta ac consectetur ac</a>
                     <a href="#" class="list-group-item">Vestibulum at eros</a>
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="list-group">
-                    <p class="list-group-item active">
-                                Fale Conosco
-                            </p>
+        </div>
+        <div class="col-sm-3">
+            <div class="list-group">
+                <button data-toggle="collapse" data-target="#list-group-3" aria-expanded="false" aria-controls="#list-group-3" class="list-group-item active">
+                    Fale Conosco
+                </button>
+                <div class="list-group-collapse collapse in" id="list-group-3">
                     <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
                     <a href="#" class="list-group-item">Morbi leo risus</a>
                     <a href="#" class="list-group-item">Porta ac consectetur ac</a>
                     <a href="#" class="list-group-item">Vestibulum at eros</a>
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="list-group">
-                    <p class="list-group-item active">
-                                Cliente
-                            </p>
+        </div>
+        <div class="col-sm-3">
+            <div class="list-group">
+                <button data-toggle="collapse" data-target="#list-group-4" aria-expanded="false" aria-controls="#list-group-4" class="list-group-item active">
+                    Cliente
+                </button>
+                <div class="list-group-collapse collapse in" id="list-group-4">
                     <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
                     <a href="#" class="list-group-item">Morbi leo risus</a>
                     <a href="#" class="list-group-item">Porta ac consectetur ac</a>
                     <a href="#" class="list-group-item">Vestibulum at eros</a>
                 </div>
             </div>
-          <!-- Lista de opções  -->
-         </div>
-    <hr id="separador"/>
+        </div>
+
+    </div>
+
+
+    <!-- ============Lista de Serviços================================= -->
+
+
+    <hr id="separador" />
+
+    <!-- ============Rodapé================================= -->
+
+
     <footer>
         <div class="col-sm-12 ">
-            <nav class="navbar navbar-default navbar-bottom">
+
             <div class="col-sm-3">
                 <img id="logo" class="img-responsive" src="imagens/logo.png" alt="">
             </div>
             <div class="col-sm-9">
                 <p>Informações sobre o site e sobre o seu dono</p>
             </div>
-         </nav>
+
         </div>
     </footer>
-       
-    </body>
+
+
+    <!-- ============Rodapé================================= -->
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+
 </html>
